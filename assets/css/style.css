@@ -1,0 +1,35 @@
+body {
+    background: #E6DADA;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #274046, #E6DADA);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #274046, #E6DADA);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+    text-align: center;
+    justify-content: left;
+    padding: 100px;
+}
+
+h2 {
+    font-family: 'Monoton', cursive;
+    color: yellow;
+    font-size: 50px;
+}
+
+h4 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+.scoreboard {
+    padding-top: 30px;
+}
+
+.scoreboard p {
+    margin: 10px 0;
+    font-size: 25px;
+}
