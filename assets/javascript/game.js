@@ -10,10 +10,6 @@ var numOfLosses = document.querySelector('#your-losses');
 var guessesRemaining = document.querySelector('#guesses-left');
 var userGuesses = document.querySelector('#user-guesses');
 
-// startGame();
-
-// initialize the game with a function
-// function startGame() {
 
 // set dococument.onkeyup function
 document.onkeyup = function(event) {
@@ -78,4 +74,3 @@ function reset() {
     guessesRemaining.textContent = '10';
     userGuesses.textContent = '';
 }
-// }
