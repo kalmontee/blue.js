@@ -1,13 +1,13 @@
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var yourGuesses = '';
-var computerChoice;
+var yourGuesses = ''; // rename this variable
+var computerChoice; // rename this variable
 
 // Target the HTML DOM
 var numOfWins = document.querySelector('#your-wins');
 var numOfLosses = document.querySelector('#your-losses');
-var guessesRemaining = document.querySelector('#guesses-left');
+var guessesRemaining = document.querySelector('#guesses-left'); // rename this variable
 var userGuesses = document.querySelector('#user-guesses');
 
 
@@ -74,3 +74,13 @@ function reset() {
     guessesRemaining.textContent = '10';
     userGuesses.textContent = '';
 }
+
+/*
+* TO DO:
+    * Modify your variables.
+        * Change their names (be concise)
+        
+    * event.key - When pressed only alphabet letters should appear in the app.
+    * "Your guesses left" - Store all your pressed letters in the empty content.
+
+*/
