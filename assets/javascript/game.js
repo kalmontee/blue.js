@@ -19,8 +19,7 @@ document.onkeyup = function(event) {
     var userGuess = event.key;
 
     // set computerChoice variable as an array;
-    // var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
     // let the computer randomly selects a letter
     var randomChoice = letters[Math.floor(Math.random() * 26)];
@@ -49,6 +48,9 @@ document.onkeyup = function(event) {
         // alert the user invalid entry
         alert("Invalid Entry. Please press a letter from A-Z");
 
+    } else if (guessesSoFar.indexOf(userGuess) >= 0) {
+        alert('You already used that letter');
+
     } else if (userGuess !== computerChoice) {
         console.log("You picked the wrong letter. " + userGuess); // test
 
@@ -59,9 +61,6 @@ document.onkeyup = function(event) {
         // reduce the remaining userguess letters
         guessesLeft--;
         document.querySelector('#guesses-left').textContent = guessesLeft;
-
-    } else if (guessesSoFar.indexOf(userGuess) >= 0) {
-        alert('You already used that letter');
 
     }
 
@@ -91,9 +90,3 @@ function reset() {
     // reset your user guesses letter to nothing.
     document.querySelector('#user-guesses').textContent = [];
 }
-
-/*
-* Prevent users to pressed the same letter more than once.
-
-* Remove the comma in Guesses left so far
-*/
