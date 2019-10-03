@@ -1,8 +1,8 @@
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var yourGuesses = []; // rename this variable
-var computerChoice; // rename this variable
+var guessesSoFar = [];
+var computerChoice;
 
 // Target the HTML DOM
 
@@ -11,13 +11,16 @@ var computerChoice; // rename this variable
 // var userGuesses = document.querySelector('#user-guesses');
 // var guessesRemaining = document.querySelector('#guesses-left'); // rename this variable
 
+
+
 // set dococument.onkeyup function
 document.onkeyup = function(event) {
 
     var userGuess = event.key;
 
     // set computerChoice variable as an array;
-    var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    // var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
 
     // let the computer randomly selects a letter
     var randomChoice = letters[Math.floor(Math.random() * 26)];
@@ -39,23 +42,27 @@ document.onkeyup = function(event) {
         reset();
     }
 
-    // Prevent user from choosing a key that's not part of the alphabet.
+    // Prevent userGuess from choosing a key that's not part of the alphabet.
     // a = unicode 65, z = unicode 90. (I learned something new!);
     if (event.keyCode < 65 || event.keyCode > 90) {
 
         // alert the user invalid entry
-        alert("Invalid Entry");
+        alert("Invalid Entry. Please press a letter from A-Z");
 
     } else if (userGuess !== computerChoice) {
         console.log("You picked the wrong letter. " + userGuess); // test
 
-        // use .push() to output userGuess when pressed a letter
-        yourGuesses.push(userGuess + ' ');
-        document.querySelector('#user-guesses').textContent = yourGuesses;
+        // use .push() to output userGuess letters
+        guessesSoFar.push(userGuess);
+        document.querySelector('#user-guesses').textContent = guessesSoFar.join(' '); // Use .join() method to seperate user guesses output. 
 
         // reduce the remaining userguess letters
         guessesLeft--;
         document.querySelector('#guesses-left').textContent = guessesLeft;
+
+    } else if (guessesSoFar.indexOf(userGuess) >= 0) {
+        alert('You already used that letter');
+
     }
 
     if (guessesLeft <= 0) {
@@ -64,8 +71,6 @@ document.onkeyup = function(event) {
 
         // add a win to losses
         losses++;
-
-        // numOfLosses.textContent = losses;
         document.querySelector('#your-losses').textContent = losses;
 
         // reset the game when user losses
@@ -78,11 +83,17 @@ function reset() {
     guessesLeft = 10;
 
     // reset user guesses letter to nothing
-    yourGuesses = [];
+    guessesSoFar = [];
 
     // reset guesses remaining to 10
     document.querySelector('#guesses-left').textContent = '10';
 
     // reset your user guesses letter to nothing.
-    document.querySelector('#user-guesses').textContent = '';
+    document.querySelector('#user-guesses').textContent = [];
 }
+
+/*
+* Prevent users to pressed the same letter more than once.
+
+* Remove the comma in Guesses left so far
+*/
