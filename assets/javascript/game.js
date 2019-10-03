@@ -31,7 +31,7 @@ document.onkeyup = function(event) {
         console.log("You picked the right letter as the computer. Letter " + userGuess); // test
 
         // alert the user won
-        alert("You Win!");
+        alert("Amazing....You Won!");
 
         // Add +1 to the win score
         wins++
@@ -52,6 +52,7 @@ document.onkeyup = function(event) {
         alert('You already used that letter');
 
     } else if (userGuess !== computerChoice) {
+
         console.log("You picked the wrong letter. " + userGuess); // test
 
         // use .push() to output userGuess letters
