@@ -7,6 +7,36 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.intro {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: lightgray;
+    position: absolute;
+    right: 350px;
+    bottom: 345px;
+}
+
+.intro::after {
+    position: relative;
+}
+
+.intro h3 p {
+    position: relative;
+}
+
+.intro h3 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
 .container {
     text-align: center;
     justify-content: left;
