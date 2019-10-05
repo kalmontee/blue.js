@@ -4,14 +4,6 @@ var guessesLeft = 10;
 var guessesSoFar = [];
 var computerChoice;
 
-// Target the HTML DOM
-
-// var numOfWins = document.querySelector('#your-wins');
-// var numOfLosses = document.querySelector('#your-losses');
-// var userGuesses = document.querySelector('#user-guesses');
-// var guessesRemaining = document.querySelector('#guesses-left'); // rename this variable
-
-
 
 // set dococument.onkeyup function
 document.onkeyup = function(event) {
@@ -82,11 +74,11 @@ function reset() {
     // reset the score to 10
     guessesLeft = 10;
 
-    // reset user guesses letter to nothing
-    guessesSoFar = [];
-
     // reset guesses remaining to 10
     document.querySelector('#guesses-left').textContent = '10';
+
+    // reset user guesses letter to nothing
+    guessesSoFar = [];
 
     // reset your user guesses letter to nothing.
     document.querySelector('#user-guesses').textContent = [];
