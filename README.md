@@ -1,7 +1,7 @@
 # blue.js
 JavaScript Psychic Game
 
-This game was built with vanilla JavaScript.
+This game was built with vanilla JavaScript @ kalmnontee.github.io/blue.js
 
 The game is hosted online. It can be played on the browser. 
 
