@@ -17,11 +17,8 @@ document.onkeyup = function(event) {
     var randomChoice = letters[Math.floor(Math.random() * 26)];
 
     computerChoice = randomChoice;
-    console.log("computer chose: " + computerChoice); // testing...... IT WORKS! Computer automatically thinks of a random word.
 
     if (userGuess === computerChoice) {
-        console.log("You picked the right letter as the computer. Letter " + userGuess); // test
-
         // alert the user won
         alert("Amazing....You Won!");
 
@@ -44,8 +41,6 @@ document.onkeyup = function(event) {
         alert('You already used that letter');
 
     } else if (userGuess !== computerChoice) {
-
-        console.log("You picked the wrong letter. " + userGuess); // test
 
         // use .push() to output userGuess letters
         guessesSoFar.push(userGuess);
