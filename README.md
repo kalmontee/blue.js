@@ -4,7 +4,7 @@
 
 * The game is hosted online. It can be played on the browser @ kalmnontee.github.io/blue.js.
 
-### FUTURE REFERENCE: This game can only be played with a desktop or a laptop. Mobile use is currently unavailable.
+# FUTURE REFERENCE: This game can only be played with a desktop or a laptop. Mobile use is currently unavailable.
 
 ## Instructions
 * The computer will randomly choose a letter from the alphabet. The goal of the game is for the user to guess the letter the computer is "thinking" by pressing a key on the keyboard.
