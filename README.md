@@ -1,4 +1,6 @@
-# Psychic Game
+![psychic-game](https://user-images.githubusercontent.com/52462582/69443517-8b90f600-0d1c-11ea-8adc-0fb159ebeda1.png)
+
+# The Psychic Game
 
 This game was built with vanilla JavaScript.
 
