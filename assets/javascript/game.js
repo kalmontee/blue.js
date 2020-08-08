@@ -4,77 +4,71 @@ var guessesLeft = 10;
 var guessesSoFar = [];
 var computerChoice;
 
-
 // set dococument.onkeyup function
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
+  // event.key will determine what letter the user pressed.
+  var user = event.key;
 
-    var userGuess = event.key;
+  // set computerChoice variable as an array;
+  var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-    // set computerChoice variable as an array;
-    var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  // let the computer randomly selects a letter
+  computerChoice = letters[Math.floor(Math.random() * 26)];
 
-    // let the computer randomly selects a letter
-    var randomChoice = letters[Math.floor(Math.random() * 26)];
+  if (user === computerChoice) {
+    // alert the user won
+    alert("Amazing....You Won!");
 
-    computerChoice = randomChoice;
+    // Add +1 to the win score
+    wins++
+    document.querySelector('#your-wins').textContent = wins;
 
-    if (userGuess === computerChoice) {
-        // alert the user won
-        alert("Amazing....You Won!");
+    // reset the game when user wins
+    reset();
+  }
 
-        // Add +1 to the win score
-        wins++
-        document.querySelector('#your-wins').textContent = wins;
+  // Prevent user from choosing a key that's not part of the alphabet.
+  // a = unicode 65, z = unicode 90.
+  if (event.keyCode < 65 || event.keyCode > 90) {
+    // alert the user invalid entry
+    alert("Invalid Entry. Please press a letter from A-Z");
 
-        // reset the game when user wins
-        reset();
-    }
+  } else if (guessesSoFar.indexOf(user) >= 0) {
+    alert('You already used that letter');
 
-    // Prevent userGuess from choosing a key that's not part of the alphabet.
-    // a = unicode 65, z = unicode 90. (I learned something new!);
-    if (event.keyCode < 65 || event.keyCode > 90) {
+  } else if (user !== computerChoice) {
+    // push() method to output user letters
+    guessesSoFar.push(user);
 
-        // alert the user invalid entry
-        alert("Invalid Entry. Please press a letter from A-Z");
+    // Use join() method to seperate user guesses output. 
+    document.querySelector('#user-guesses').textContent = guessesSoFar.join(' ');
 
-    } else if (guessesSoFar.indexOf(userGuess) >= 0) {
-        alert('You already used that letter');
+    // reduce the remaining userguess letters
+    guessesLeft--;
+    document.querySelector('#guesses-left').textContent = guessesLeft;
+  }
 
-    } else if (userGuess !== computerChoice) {
+  if (guessesLeft <= 0) {
+    // user lost
+    alert('YOU LOST. HA!');
 
-        // use .push() to output userGuess letters
-        guessesSoFar.push(userGuess);
-        document.querySelector('#user-guesses').textContent = guessesSoFar.join(' '); // Use .join() method to seperate user guesses output. 
+    // add a win to losses
+    losses++;
+    document.querySelector('#your-losses').textContent = losses;
 
-        // reduce the remaining userguess letters
-        guessesLeft--;
-        document.querySelector('#guesses-left').textContent = guessesLeft;
-
-    }
-
-    if (guessesLeft <= 0) {
-        // user lost
-        alert('YOU LOST. HA!');
-
-        // add a win to losses
-        losses++;
-        document.querySelector('#your-losses').textContent = losses;
-
-        // reset the game when user losses
-        reset();
-    }
+    // reset the game when user lost
+    reset();
+  }
 }
 
 function reset() {
-    // reset the score to 10
-    guessesLeft = 10;
+  // reset the score to 10
+  guessesLeft = 10;
 
-    // reset guesses remaining to 10
-    document.querySelector('#guesses-left').textContent = '10';
+  // reset guesses remaining to 10
+  document.querySelector('#guesses-left').textContent = '10';
 
-    // reset user guesses letter to nothing
-    guessesSoFar = [];
-
-    // reset your user guesses letter to nothing.
-    document.querySelector('#user-guesses').textContent = [];
+  // reset user guesses letters to 0
+  guessesSoFar = [];
+  document.querySelector('#user-guesses').textContent = [];
 }
