@@ -1,28 +1,48 @@
+# 🔮 The Psychic Game
+
+This is a classic letter-guessing game where the user attempts to guess a letter randomly chosen by the computer. It was built using vanilla JavaScript.
+
 ![psychic-game](https://user-images.githubusercontent.com/52462582/69443517-8b90f600-0d1c-11ea-8adc-0fb159ebeda1.png)
 
-# The Psychic Game
+---
 
-This game was built with vanilla JavaScript.
+## 💻 Technologies Used
 
-FUTURE REFERENCE: This game can only be played with a desktop or a laptop. Mobile use is currently unavailable.
+The application was built using foundational web technologies:
 
-## Technologies
+* **HTML**
+* **CSS**
+* **JavaScript** (Vanilla)
 
-* HTML
+---
 
-* CSS
+## 🎮 How to Play
 
-* JavaScript
+The objective of the game is to correctly guess the single letter the computer has randomly selected.
 
-## Instructions
-The computer will randomly choose a letter from the alphabet. The goal of the game is for the user to guess the letter the computer is "thinking" by pressing a key on the keyboard.
+1.  **Guessing:** The user makes a guess by pressing a key on the keyboard.
+2.  **Chances:** The user has **10 chances** per round to guess the correct letter.
+3.  **Wins & Losses:**
+    * If the user guesses correctly, the **Wins** score increases by one.
+    * If the user runs out of chances (10 incorrect guesses), the **Losses** score increases by one.
+4.  **Tracking:** All incorrect guesses made during the current round are displayed.
+5.  **Restarting Rounds:** The game automatically restarts (without reloading the page) upon a win or loss.
+6.  **Score Reset:** To reset the accumulated **Wins** and **Losses** scores, the user must manually refresh the browser page.
 
-The user will have 10 chances to guess the correct letter, otherwise it will count as a loss and it will add +1 to losses. The game will output each incorrect guess the user makes.
+### Game Constraints
 
-Every time the user guesses a letter correctly, their wining score will increase by one.
+The game enforces the following rules to maintain fairness and function:
 
-The game will prevent the user from making any guesses that aren't letters from A to Z, as well as from repeating previous guesses. Neither of these mistakes will count as one of the user's 10 chances nor the current score.
+* Only **alphabetical keys (A-Z)** are accepted as valid guesses.
+* The user is **prevented from repeating a guess** made earlier in the current round.
+* Invalid or repeated guesses **do not** count against the user's 10 remaining chances.
 
-Each time the user wins or loses, the game will restart without reloading the page. However, if you want to restart the winning and losing score then you're going to need to refresh the page.
+---
 
-I hope you enjoy the game!
+## ⚠️ Future Reference
+
+**Desktop Use Only:** This game is currently designed for and playable only on **desktop or laptop** browsers. Mobile use is not supported.
+
+---
+
+I hope you enjoy testing your psychic abilities!
